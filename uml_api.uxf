@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>20</y>
+      <w>320</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Element
+--
+
+- id : int
+- content : String
+- lastUpdateTS : int
+
+--
+
++ getID() : int
++ getContent() : String
++ getLastUpdate() : int
+_+ createFromID(id : int) : Element_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>20</y>
+      <w>320</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>User
+--
+
+- id : int
+- username : String
+- password : String
+- email : String
+- isAdmin : bool
+- token : Token [0..*]
+
+--
+
++ getID() : int
++ getUsername() : String
++ getPassword() : String
++ getEmail() : String
++ isAdmin() : bool
++ generateToken() : bool
+_+ createFromAuth(challenge: String) : User_
+_+ createFromToken(token) : User_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>20</y>
+      <w>320</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Token
+--
+
+- id : String
+- owner : User
+- machineName : String
+- ip : String
+- firstLoginTS : int
+- lastUpdateTS : int
+
+--
+
++ getID() : int
++ getOwner() : User
++ getIP() : String
++ getFirstLoginTS() : int
++ getLastUpdateTS() : int
+_+ createFromUser(userID : int) : Token [0..*]_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>520</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>UsersController
+--
++ users(challenge : String) : void [ GET ]
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>520</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>ChallengeController
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>520</y>
+      <w>270</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>ConfigController
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
