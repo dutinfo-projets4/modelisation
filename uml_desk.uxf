@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>266</y>
+      <w>154</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>User
+--
+- id : int
+- username : String
+- email : String
+- admin : boolean
+--
++ getRoot() : Group
++ updateInfo() : bool
++ joinPushServer() : bool
+_+ login(token : String) : User_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>476</x>
+      <y>91</y>
+      <w>182</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>Group
+--
+- id : int
+- name : String
+--
++ getSubGroups() : Group
++ getElements() : Element
++ updateGroup() : bool
+
++ addSubGroup(grp : Group) : bool
++ removeSubGroup(grp : Group) : bool
+
++ addElement(elt : Element) : bool
++ updateElement(elt : Element) : bool
++ removeElement(elt : Element) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>119</y>
+      <w>147</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+r1=
+m2=1..1
+r2=root
+contains</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>49</y>
+      <w>133</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..*
+m2=1..1
+subGroups</panel_attributes>
+    <additional_attributes>60.0;70.0;100.0;70.0;100.0;10.0;10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>203</y>
+      <w>140</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Element
+--
+- id : int
+- name : String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>567</x>
+      <y>329</y>
+      <w>161</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>PasswordElement
+--
+--
++ getFieldAmount() : int
++ getField(nb : int) : PasswordField</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>252</y>
+      <w>147</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>574</x>
+      <y>490</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>PasswordField
+--
+- content : String
+- hidden : boolean
+--
++ getContent() : String
++ isHidden() : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>378</y>
+      <w>56</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+r1=fields
+m2=1..*
+r2=
+contains</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>651</x>
+      <y>133</y>
+      <w>210</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+r1=elements
+m2=1..n
+r2=student
+contains</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0;240.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>329</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>MemoElement
+--
+- content : String
+--
++ getContent() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>791</x>
+      <y>252</y>
+      <w>21</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>868</x>
+      <y>329</y>
+      <w>105</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Bookmarks
+--
+- url : String
+--
++ getURL() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>252</y>
+      <w>112</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>21</x>
+      <y>91</y>
+      <w>182</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>CryptoUtils
+--
+
+--
+_+ generateKeypair() : bool_
+_+ signMessage(msg : String) : String_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>21</x>
+      <y>210</y>
+      <w>182</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>FileUtils
+--
+_- dbFile : File_
+--
+_+ loadConfig(portable : boolean) : void_
+_+ getPublicKeyFile() : File_
+_+ getPrivateKeyFile() : File_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>924</x>
+      <y>259</y>
+      <w>91</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Config
+--
+- value : String
+--
+getValue() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>868</x>
+      <y>224</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>21</x>
+      <y>336</y>
+      <w>182</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>LocalDB
+--
+- sqlCon : Connection
+--
+- LocalDB()
++ getConnection() : Connection
++ closeConnection() : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
